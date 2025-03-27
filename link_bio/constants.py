@@ -1,3 +1,7 @@
+#General
+G_tAG = "G-QVRYTWM0N7"
+
+
 #Cabecera
 LINKEDIN_URL = "https://www.linkedin.com/in/angel-reto-castro-5149441b3/"
 INSTAGRAM_URL= "https://www.instagram.com/rtocast/"

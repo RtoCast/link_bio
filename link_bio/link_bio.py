@@ -1,50 +1,28 @@
 import reflex as rx
+import link_bio.constants as constants
 import link_bio.styles.styles as styles
-from link_bio.components.footer import footer
-from link_bio.components.navbar import navbar
-from link_bio.views.header.header import header
-from link_bio.views.links.links import links
-from link_bio.styles.styles import Size as Size
+from link_bio.pages.index import index
+from link_bio.pages.courses import courses
+from link_bio.pages.certifications import certifications
 
-class State(rx.State):
-    pass
+# class State(rx.State):
+#     pass
     
-
-def index() -> rx.Component :
-    return rx.box(
-        navbar(),
-        rx.center(
-            rx.vstack(            
-                header(),
-                links(),
-                #CSS
-                max_width = styles.MAX_WIDTH,
-                width = "100%",
-                margin_y=Size.BIG,
-                margin_X=Size.BIG
-                
-                #justify = "between"
-            ),            
-        ),
-        footer()
-    )
-    
-
-
-# Personalizamos los componente en reflex
-
-
 app = rx.App(
-    style = styles.BASE_STYLE,
-    stylesheets = styles.STYLESHEETS
+    stylesheets = styles.STYLESHEETS,
+    style = styles.BASE_STYLE
+    # head_components= [
+    #     rx.script(src=f"https://www.googletagmanager.com/gtag/js?id=G-QVRYTWM0N7"),
+    #     rx.script(
+    #         """        
+    #         "window.dataLayer = window.dataLayer || [];
+    #         function gtag(){dataLayer.push(arguments);}
+    #         gtag('js', new Date());
+    #         gtag('config', 'G-QVRYTWM0N7');
+    #         """
+    #     )            
+    # ]
 )
 
-app.add_page(
-    index,
-    title= "Pagina de Reto",
-    description= "Descripcion",
-    image= "avatar.png"
-)
 
-app._compile()
 

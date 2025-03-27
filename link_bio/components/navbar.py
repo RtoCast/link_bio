@@ -1,25 +1,29 @@
 import reflex as rx
 import link_bio.styles.styles as styles
+from link_bio.routes import Route
 from link_bio.styles.styles import Size as Size
 from link_bio.styles.colors import Color
 
 
 def navbar() -> rx.Component:
-    return rx.hstack(
-        rx.box(
-            rx.text(
-                "Rto",
-                as_= "span",
-                #CSS
-                color =Color.PRIMARY
+    return rx.hstack(        
+        rx.link(            
+            rx.box(
+                rx.text(
+                    "Rto",
+                    as_= "span",
+                    #CSS
+                    color =Color.PRIMARY
+                ),
+                rx.text(
+                    "Cast",
+                    as_= "span",
+                    #CSS
+                    color =Color.SECONDARY
+                ),
+                style = styles.navbar_title_style
             ),
-            rx.text(
-                "Cast",
-                as_= "span",
-                #CSS
-                color =Color.SECONDARY
-            ),
-            style = styles.navbar_title_style
+            href= Route.INDEX
         ),
         #CSS
         position = "sticky",
@@ -27,5 +31,5 @@ def navbar() -> rx.Component:
         padding_x = Size.DEFAULT,
         padding_y = Size.SMALL,
         z_index = "999",
-        top = "0",
+        top = "0"            
     )
