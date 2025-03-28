@@ -5,8 +5,8 @@ from link_bio.pages.index import index
 from link_bio.pages.courses import courses
 from link_bio.pages.certifications import certifications
 
-# class State(rx.State):
-#     pass
+class State(rx.State):
+    pass
     
 app = rx.App(
     stylesheets = styles.STYLESHEETS,
