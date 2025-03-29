@@ -6,6 +6,13 @@ from link_bio.components.navbar import navbar
 from link_bio.views.header import header
 from link_bio.views.index_links import index_links
 from link_bio.styles.styles import Size as Size
+from link_bio.api.api import hello
+
+class IndexState(rx.State):
+    
+    @rx.var
+    def say_hello(self)->str:
+        return hello()    
 
 @rx.page(
     title = utils.index_title,
@@ -19,6 +26,7 @@ def index() -> rx.Component:
         navbar(),
         rx.center(
             rx.vstack(            
+                rx.text(IndexState.say_hello),      
                 header(),
                 index_links(),
                 #CSS

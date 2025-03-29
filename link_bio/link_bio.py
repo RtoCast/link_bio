@@ -6,8 +6,6 @@ from link_bio.pages.courses import courses
 from link_bio.pages.certifications import certifications
 from link_bio.api.api import hello
 
-class State(rx.State):
-    pass
     
 app = rx.App(
     stylesheets = styles.STYLESHEETS,
